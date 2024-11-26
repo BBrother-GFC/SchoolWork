@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-    <title>Cart page</title>
+    <title>购物车</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -130,13 +130,12 @@
                                             <li><a href="blog-post.html">博客文章</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">页面</a>
+                                    <li class="active"><a href="#">页面</a>
                                         <ul class="rd-navbar-megamenu">
                                             <li>
                                                 <h5 class="rd-megamenu-header">订购</h5>
                                                 <ul class="rd-megamenu-list">
                                                     <li><a href="promos.html">促销</a></li>
-                                                    <li><a href="pricing-tables.html">定价</a></li>
                                                     <li><a href="login.html">登录</a></li>
                                                     <li><a href="faq.html">帮助</a></li>
                                                     <li><a href="cart-page.html">购物车</a></li>
@@ -160,7 +159,7 @@
                                                     <li><a href="forms.html">获取服务</a></li>
                                                     <!-- <li><a href="grid-system.html">Grid system</a></li> -->
                                                     <li><a href="progress-bars.html">数据分析</a></li>
-                                                    <li><a href="tables.html">价格表</a></li>
+                                                    <!-- <li><a href="tables.html">价格表</a></li> -->
                                                     <!-- <li><a href="tabs-and-accordions.html">Tabs and Accordions-AI</a></li> -->
                                                     <!-- <li><a href="typography.html">Typography-AI</a></li> -->
                                                 </ul>
@@ -191,7 +190,7 @@
         <!-- Your Order-->
         <section class="section section-md bg-image bg-image-dark text-center" style="background-image: url(images/bg-image-16-1920x850.jpg);">
             <div class="container">
-                <h2>Your Order</h2>
+                <h2>您的订单</h2>
             </div>
         </section>
 
@@ -202,9 +201,9 @@
                 <div class="tabs-custom tabs-horizontal tabs-bordered" id="tabs-cart">
                     <!-- Nav tabs-->
                     <ul class="nav nav-tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#tabs-cart-1" data-toggle="tab">01 Cart</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tabs-cart-2" data-toggle="tab">02 Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tabs-cart-3" data-toggle="tab">03 Payment</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#tabs-cart-1" data-toggle="tab">01 总览</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tabs-cart-2" data-toggle="tab">02 注册</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tabs-cart-3" data-toggle="tab">03 付款</a></li>
                     </ul>
                     <!-- Tab panes-->
                     <div class="tab-content">
@@ -213,7 +212,7 @@
                             <article class="box-summary">
                                 <div class="box-summary__row">
                                     <div class="box-summary__details">
-                                        <p>Domain registration</p>
+                                        <p>域名注册</p>
                                         <p class="box-summary__subject">demolink.org</p>
                                     </div>
                                     <div class="box-summary__aside">
@@ -221,12 +220,12 @@
                                             <div class="select-wrap">
                                                 <!-- Select 2-->
                                                 <select class="form-input select select-inline" data-placeholder="Select an option" data-constraints="@Selected" data-dropdown-class="select-dropdown-inline">
-                            <option value="1" selected="">1 year</option>
-                            <option value="2">2 years </option>
-                            <option value="3">3 years</option>
+                            <option value="1" selected="">1 年</option>
+                            <option value="2">2 年 </option>
+                            <option value="3">3 年</option>
                           </select>
                                             </div>
-                                            <p class="box-summary__price">$60.00</p>
+                                            <p class="box-summary__price">￥480.00</p>
                                             <button class="box-summary__remove"> </button>
                                         </div>
                                     </div>
@@ -237,7 +236,7 @@
                                     </div>
                                     <div class="box-summary__aside">
                                         <div class="box-summary__aside-inner">
-                                            <p class="box-summary__price box-summary__price-total">$60.00</p>
+                                            <p class="box-summary__price box-summary__price-total">￥480.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -247,12 +246,12 @@
                                         <form class="rd-form form_inline form_lg">
                                             <div class="form-wrap">
                                                 <input class="form-input" id="promo-code" type="text" name="promo-code">
-                                                <label class="form-label" for="promo-code">Promo code</label>
+                                                <label class="form-label" for="promo-code">优惠码</label>
                                             </div>
                                             <div class="form-button">
-                                                <button class="button button-lg button-primary button-ujarak" type="submit">Apply</button>
+                                                <button class="button button-lg button-primary button-ujarak" type="submit">应用</button>
                                             </div>
-                                            <div class="form-button"><a class="button button-lg button-secondary button-ujarak" href="#">Next step</a></div>
+                                            <div class="form-button"><a class="button button-lg button-secondary button-ujarak" href="#">下一步</a></div>
                                         </form>
                                     </div>
                                 </div>
@@ -264,30 +263,30 @@
                                     <div class="group-sm group-sm-justify group-middle"><a class="button button-facebook button-icon button-icon-left" href="#"><span class="icon fa fa-facebook"></span>Facebook</a><a class="button button-twitter button-icon button-icon-left" href="#"><span class="icon fa fa-twitter"></span>Twitter</a>
                                         <a class="button button-google button-icon button-icon-left" href="#"><span class="icon fa fa-google-plus"></span>Google+</a>
                                     </div>
-                                    <div class="text-decoration-lines"><span class="text-decoration-lines__content">or</span></div>
+                                    <div class="text-decoration-lines"><span class="text-decoration-lines__content">或</span></div>
                                     <!-- RD Mailform-->
                                     <form class="rd-form rd-mailform rd-mailform_label-centered">
                                         <div class="form-wrap">
-                                            <label class="form-label-outside" for="login-email">E-mail</label>
+                                            <label class="form-label-outside" for="login-email">电子邮件地址</label>
                                             <input class="form-input" id="login-email" type="email" name="email" data-constraints="@Email @Required">
                                         </div>
                                         <div class="form-wrap">
-                                            <label class="form-label-outside" for="login-password">Password</label>
+                                            <label class="form-label-outside" for="login-password">密码</label>
                                             <input class="form-input" id="login-password" type="password" name="pass" data-constraints="@Required">
                                         </div>
                                         <div class="form-wrap">
                                             <label class="checkbox-inline">
-                          <input type="checkbox">Remember Me 
+                          <input type="checkbox">记住我
                         </label>
                                         </div>
                                         <div class="row row-20 form-wrap">
                                             <div class="col-md-6">
-                                                <button class="button button-primary button-block button-ujarak" type="submit">Login</button>
+                                                <button class="button button-primary button-block button-ujarak" type="submit">登录</button>
                                             </div>
                                             <div class="col-md-6">
-                                                <button class="button button-default-outline button-block button-ujarak">Create an Account</button>
+                                                <button class="button button-default-outline button-block button-ujarak">创建账户</button>
                                             </div>
-                                            <div class="col-sm-12 text-right"><a class="button button-lg button-secondary button-ujarak" href="#">Next step</a></div>
+                                            <div class="col-sm-12 text-right"><a class="button button-lg button-secondary button-ujarak" href="#">下一步</a></div>
                                         </div>
                                     </form>
                                 </div>
@@ -296,24 +295,24 @@
                         <div class="tab-pane fade" id="tabs-cart-3">
                             <div class="row row-50 justify-content-md-center justify-content-lg-start">
                                 <div class="col-md-10 col-lg-6">
-                                    <h4>Payment Methods </h4>
+                                    <h4>付款方式 </h4>
                                     <article class="box-bordered">
                                         <div class="box-bordered__content">
                                             <ul class="list-xs">
                                                 <li class="form-wrap">
                                                     <label class="radio-inline">
-                              <input name="radio-group-1" value="radio-1" type="radio" checked="">Direct Bank Transfer
+                              <input name="radio-group-1" value="radio-1" type="radio" checked="">银行直接转账
                             </label>
-                                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the payment is complete. </p>
+                                                    <p>直接将款项存入我们的银行账户。请使用您的订单 ID 作为付款参考。在付款完成之前，您的订单不会发货。</p>
                                                 </li>
                                                 <li class="form-wrap">
                                                     <label class="radio-inline">
-                              <input name="radio-group-1" value="radio-2" type="radio">PayPal
+                              <input name="radio-group-1" value="radio-2" type="radio">使用 PayPal
                             </label>
                                                 </li>
                                                 <li class="form-wrap">
                                                     <label class="radio-inline">
-                              <input name="radio-group-1" value="radio-3" type="radio">Cheque Payment
+                              <input name="radio-group-1" value="radio-3" type="radio">支票支付
                             </label>
                                                 </li>
                                             </ul>
@@ -321,26 +320,26 @@
                                     </article>
                                 </div>
                                 <div class="col-md-10 col-lg-6">
-                                    <h4>Cart Total</h4>
+                                    <h4>购物车总数</h4>
                                     <article class="box-bordered">
                                         <table class="box-bordered__table">
                                             <tr>
-                                                <td>Cart subtotal</td>
-                                                <td>$580</td>
+                                                <td>购物车小计</td>
+                                                <td>￥480.00</td>
                                             </tr>
                                             <tr>
-                                                <td>Sale</td>
-                                                <td>$20</td>
+                                                <td>优惠</td>
+                                                <td>￥20.00</td>
                                             </tr>
                                             <tr>
-                                                <td>Total</td>
-                                                <td>$560</td>
+                                                <td>总计</td>
+                                                <td>￥460.00</td>
                                             </tr>
                                         </table>
                                     </article>
                                 </div>
                             </div>
-                            <div class="offset-top-1 text-center"><a class="button button-lg button-secondary button-ujarak" href="#">Go to Payment</a></div>
+                            <div class="offset-top-1 text-center"><a class="button button-lg button-secondary button-ujarak" href="#">前往付款</a></div>
                         </div>
                     </div>
                 </div>
