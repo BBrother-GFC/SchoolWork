@@ -359,19 +359,19 @@
       var regularConstraintsMessages = [
         {
           type: regula.Constraint.Required,
-          newMessage: "The text field is required."
+          newMessage: "文本字段是必填的。"
         },
         {
           type: regula.Constraint.Email,
-          newMessage: "The email is not a valid email."
+          newMessage: "电子邮件地址无效。"
         },
         {
           type: regula.Constraint.Numeric,
-          newMessage: "Only numbers are required"
+          newMessage: "只需填写数字。"
         },
         {
           type: regula.Constraint.Selected,
-          newMessage: "Please choose an option."
+          newMessage: "请选择一个选项。"
         }
       ];
 
@@ -1256,7 +1256,7 @@
               form.addClass('form-in-process');
 
               if (output.hasClass("snackbars")) {
-                output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
+                output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>发送中...</span></p>');
                 output.addClass("active");
               }
             } else {
