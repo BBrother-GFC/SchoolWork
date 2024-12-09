@@ -1,7 +1,6 @@
 "use strict";
 
 (function() {
-    // Global variables
     var userAgent = navigator.userAgent.toLowerCase(),
         initialDate = new Date(),
 
@@ -55,9 +54,7 @@
         };
 
 
-    // Initialize scripts that require a loaded page
     $window.on('load', function() {
-        // Page loader & Page transition
         if (plugins.preloader.length && !isNoviBuilder) {
             pageTransition({
                 page: $('.page'),
@@ -81,15 +78,14 @@
         }
     });
 
-    // Initialize scripts that require a finished document
     $(function() {
         isNoviBuilder = window.xMode;
 
         /**
-         * @desc Calculate the height of swiper slider basing on data attr
-         * @param {object} object - slider jQuery object
-         * @param {string} attr - attribute name
-         * @return {number} slider height
+         * @desc
+         * @param {object}
+         * @param {string}
+         * @return {number}
          */
         function getSwiperHeight(object, attr) {
             var val = object.attr("data-" + attr),
@@ -177,8 +173,8 @@
 
 
         /**
-         * @desc Initialize owl carousel plugin
-         * @param {object} c - carousel jQuery object
+         * @desc
+         * @param {object}
          */
         function initOwlCarousel(c) {
             var aliaces = ["-", "-sm-", "-md-", "-lg-", "-xl-", "-xxl-"],
@@ -200,7 +196,6 @@
                 }
             }
 
-            // Enable custom pagination
             if (c.attr('data-dots-custom')) {
                 c.on("initialized.owl.carousel", function(event) {
                     var carousel = $(event.currentTarget),
@@ -319,11 +314,10 @@
         }
 
         /**
-         * @desc Attach form validation to elements
-         * @param {object} elements - jQuery object
+         * @desc 
+         * @param {object}
          */
         function attachFormValidator(elements) {
-            // Custom validator - phone number
             regula.custom({
                 name: 'PhoneNumber',
                 defaultMessage: 'Invalid phone number format',
@@ -537,9 +531,9 @@
         }
 
         /**
-         * @desc Initialize the gallery with one image
-         * @param {object} itemToInit - jQuery object
-         * @param {string} addClass - additional gallery class
+         * @desc
+         * @param {object}
+         * @param {string}
          */
         function initLightGalleryItem(itemToInit, addClass) {
             if (!isNoviBuilder) {
@@ -562,15 +556,12 @@
         }
 
 
-        // Google ReCaptcha
         if (plugins.captcha.length) {
             $.getScript("//www.google.com/recaptcha/api.js?onload=onloadCaptchaCallback&render=explicit&hl=en");
         }
 
-        // Additional class on html if mac os.
         if (navigator.platform.match(/(Mac)/i)) $html.addClass("mac-os");
 
-        // Adds some loosing functionality to IE browsers (IE Polyfills)
         if (isIE) {
             if (isIE < 10) {
                 $html.addClass("lt-ie-10");
@@ -593,7 +584,6 @@
             }
         }
 
-        // Bootstrap Tooltips
         if (plugins.bootstrapTooltip.length) {
             var tooltipPlacement = plugins.bootstrapTooltip.attr('data-placement');
             initBootstrapTooltip(tooltipPlacement);
@@ -603,12 +593,10 @@
             })
         }
 
-        // Copyright Year (Evaluates correct copyright year)
         if (plugins.copyrightYear.length) {
             plugins.copyrightYear.text(initialDate.getFullYear());
         }
 
-        // Stop vioeo in bootstrapModalDialog
         if (plugins.bootstrapModalDialog.length) {
             for (var i = 0; i < plugins.bootstrapModalDialog.length; i++) {
                 var modalItem = $(plugins.bootstrapModalDialog[i]);
@@ -633,7 +621,6 @@
             }
         }
 
-        // Popovers
         if (plugins.popover.length) {
             if (window.innerWidth < 767) {
                 plugins.popover.attr('data-placement', 'bottom');
@@ -643,7 +630,6 @@
             }
         }
 
-        // Bootstrap Buttons
         if (plugins.statefulButton.length) {
             $(plugins.statefulButton).on('click', function() {
                 var statefulButtonLoading = $(this).button('loading');
@@ -654,12 +640,10 @@
             })
         }
 
-        // Bootstrap tabs
         if (plugins.bootstrapTabs.length) {
             for (var i = 0; i < plugins.bootstrapTabs.length; i++) {
                 var bootstrapTabsItem = $(plugins.bootstrapTabs[i]);
 
-                //If have slick carousel inside tab - resize slick carousel on click
                 if (bootstrapTabsItem.find('.slick-slider').length) {
                     bootstrapTabsItem.find('.tabs-custom-list > li > a').on('click', $.proxy(function() {
                         var $this = $(this);
@@ -673,7 +657,6 @@
             }
         }
 
-        // Facebook widget
         if (plugins.facebookWidget.length) {
             lazyInit(plugins.facebookWidget, function() {
                 (function(d, s, id) {
@@ -687,21 +670,18 @@
             });
         }
 
-        // Add custom styling options for input[type="radio"]
         if (plugins.radio.length) {
             for (var i = 0; i < plugins.radio.length; i++) {
                 $(plugins.radio[i]).addClass("radio-custom").after("<span class='radio-custom-dummy'></span>")
             }
         }
 
-        // Add custom styling options for input[type="checkbox"]
         if (plugins.checkbox.length) {
             for (var i = 0; i < plugins.checkbox.length; i++) {
                 $(plugins.checkbox[i]).addClass("checkbox-custom").after("<span class='checkbox-custom-dummy'></span>")
             }
         }
 
-        // UI To Top
         if (isDesktop && !isNoviBuilder) {
             $().UItoTop({
                 easingType: 'easeOutQuad',
@@ -709,7 +689,6 @@
             });
         }
 
-        // RD Navbar
         if (plugins.rdNavbar.length) {
             var aliaces, i, j, len, value, values, responsiveNavbar;
 
@@ -784,7 +763,6 @@
         }
 
 
-        // RD Search
         if (plugins.search.length || plugins.searchResults) {
             var handler = "bat/rd-search.php";
             var defaultTemplate = '<h5 class="search-title"><a target="_top" href="#{href}" class="search-link">#{title}</a></h5>' +
@@ -874,7 +852,6 @@
         }
 
 
-        // Add class in viewport
         if (plugins.viewAnimate.length) {
             for (var i = 0; i < plugins.viewAnimate.length; i++) {
                 var $view = $(plugins.viewAnimate[i]).not('.active');
@@ -888,7 +865,6 @@
         }
 
 
-        // Swiper
         if (plugins.swiper.length) {
             for (var i = 0; i < plugins.swiper.length; i++) {
                 var s = $(plugins.swiper[i]);
@@ -992,7 +968,6 @@
         }
 
 
-        // Owl carousel
         if (plugins.owl.length) {
             for (var i = 0; i < plugins.owl.length; i++) {
                 var c = $(plugins.owl[i]);
@@ -1002,27 +977,22 @@
             }
         }
 
-        // WOW
         if ($html.hasClass("wow-animation") && plugins.wow.length && !isNoviBuilder && isDesktop) {
             new WOW().init();
         }
 
-        // RD Input Label
         if (plugins.rdInputLabel.length) {
             plugins.rdInputLabel.RDInputLabel();
         }
 
-        // Regula
         if (plugins.regula.length) {
             attachFormValidator(plugins.regula);
         }
 
-        // Bootstrap tabs
         if (plugins.bootstrapTabs.length) {
             for (var i = 0; i < plugins.bootstrapTabs.length; i++) {
                 var bootstrapTabsItem = $(plugins.bootstrapTabs[i]);
 
-                //If have slick carousel inside tab - resize slick carousel on click
                 if (bootstrapTabsItem.find('.slick-slider').length) {
                     bootstrapTabsItem.find('.tabs-custom-list > li > a').on('click', $.proxy(function() {
                         var $this = $(this);
@@ -1036,13 +1006,11 @@
             }
         }
 
-        // MailChimp Ajax subscription
         if (plugins.mailchimp.length) {
             for (i = 0; i < plugins.mailchimp.length; i++) {
                 var $mailchimpItem = $(plugins.mailchimp[i]),
                     $email = $mailchimpItem.find('input[type="email"]');
 
-                // Required by MailChimp
                 $mailchimpItem.attr('novalidate', 'true');
                 $email.attr('name', 'EMAIL');
 
@@ -1113,7 +1081,6 @@
                                 return true;
                             })();
 
-                            // Stop request if builder or inputs are invalide
                             if (isNoviBuilder || !isValidated)
                                 return false;
 
@@ -1126,7 +1093,6 @@
             }
         }
 
-        // Campaign Monitor ajax subscription
         if (plugins.campaignMonitor.length) {
             for (i = 0; i < plugins.campaignMonitor.length; i++) {
                 var $campaignItem = $(plugins.campaignMonitor[i]);
@@ -1161,7 +1127,6 @@
                             }, 6000);
                         },
                         beforeSend: function(data) {
-                            // Stop request if builder or inputs are invalide
                             if (isNoviBuilder || !isValidated($this.find('[data-constraints]')))
                                 return false;
 
@@ -1169,7 +1134,6 @@
                         }
                     });
 
-                    // Clear inputs after submit
                     var inputs = $this[0].getElementsByTagName('input');
                     for (var i = 0; i < inputs.length; i++) {
                         inputs[i].value = '';
@@ -1182,7 +1146,6 @@
             }
         }
 
-        // RD Mailform
         if (plugins.rdMailForm.length) {
             var i, j, k,
                 msg = {
@@ -1218,7 +1181,6 @@
 
                         if (isValidated(inputs, captcha)) {
 
-                            // veify reCaptcha
                             if (captcha.length) {
                                 var captchaToken = captcha.find('.g-recaptcha-response').val(),
                                     captchaMsg = {
@@ -1331,10 +1293,7 @@
             }
         }
 
-        /**
-         * Select2
-         * @description Enables select2 plugin
-         */
+
         if (plugins.selectFilter.length) {
             var i;
             for (i = 0; i < plugins.selectFilter.length; i++) {
@@ -1350,16 +1309,13 @@
         }
 
 
-        // lightGallery
         if (plugins.lightGallery.length) {
             for (var i = 0; i < plugins.lightGallery.length; i++) {
                 initLightGallery(plugins.lightGallery[i]);
             }
         }
 
-        // lightGallery item
         if (plugins.lightGalleryItem.length) {
-            // Filter carousel items
             var notCarouselItems = [];
 
             for (var z = 0; z < plugins.lightGalleryItem.length; z++) {
@@ -1377,14 +1333,12 @@
             }
         }
 
-        // Dynamic lightGallery
         if (plugins.lightDynamicGalleryItem.length) {
             for (var i = 0; i < plugins.lightDynamicGalleryItem.length; i++) {
                 initDynamicLightGallery(plugins.lightDynamicGalleryItem[i]);
             }
         }
 
-        // Custom Toggles
         if (plugins.customToggle.length) {
             for (var i = 0; i < plugins.customToggle.length; i++) {
                 var $this = $(plugins.customToggle[i]);
@@ -1416,7 +1370,6 @@
             }
         }
 
-        // jQuery Count To
         if (plugins.counter.length) {
             for (var i = 0; i < plugins.counter.length; i++) {
                 var $counterNotAnimated = $(plugins.counter[i]).not('.animated');
@@ -1438,7 +1391,6 @@
         }
 
 
-        // TimeCircles
         if (plugins.dateCountdown.length) {
             for (var i = 0; i < plugins.dateCountdown.length; i++) {
                 var dateCountdownItem = $(plugins.dateCountdown[i]),
@@ -1531,7 +1483,6 @@
             }
         }
 
-        // Circle Progress
         if (plugins.circleProgress.length) {
             for (var i = 0; i < plugins.circleProgress.length; i++) {
                 var circleProgressItem = $(plugins.circleProgress[i]);
@@ -1560,7 +1511,6 @@
             }
         }
 
-        // Linear Progress bar
         if (plugins.progressLinear.length) {
             for (i = 0; i < plugins.progressLinear.length; i++) {
                 var progressBar = $(plugins.progressLinear[i]);
@@ -1581,12 +1531,10 @@
             }
         }
 
-        // Material Parallax
         if (plugins.materialParallax.length) {
             if (!isNoviBuilder && !isIE && !isMobile) {
                 plugins.materialParallax.parallax();
 
-                // heavy pages fix
                 $window.on('load', function() {
                     setTimeout(function() {
                         $window.scroll();
