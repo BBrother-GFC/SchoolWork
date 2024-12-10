@@ -81,12 +81,6 @@
     $(function() {
         isNoviBuilder = window.xMode;
 
-        /**
-         * @desc
-         * @param {object}
-         * @param {string}
-         * @return {number}
-         */
         function getSwiperHeight(object, attr) {
             var val = object.attr("data-" + attr),
                 dim;
@@ -113,10 +107,6 @@
             }
         }
 
-        /**
-         * @desc Toggle swiper videos on active slides
-         * @param {object} swiper - swiper slider
-         */
         function toggleSwiperInnerVideos(swiper) {
             var prevSlide = $(swiper.slides[swiper.previousIndex]),
                 nextSlide = $(swiper.slides[swiper.activeIndex]),
@@ -132,10 +122,6 @@
             }
         }
 
-        /**
-         * @desc Toggle swiper animations on active slides
-         * @param {object} swiper - swiper slider
-         */
         function toggleSwiperCaptionAnimation(swiper) {
             var prevSlide = $(swiper.container),
                 nextSlide = $(swiper.slides[swiper.activeIndex]);
@@ -172,10 +158,6 @@
         }
 
 
-        /**
-         * @desc
-         * @param {object}
-         */
         function initOwlCarousel(c) {
             var aliaces = ["-", "-sm-", "-md-", "-lg-", "-xl-", "-xxl-"],
                 values = [0, 576, 768, 992, 1200, 1600],
@@ -256,11 +238,6 @@
             });
         }
 
-        /**
-         * @desc Check the element whas been scrolled into the view
-         * @param {object} elem - jQuery object
-         * @return {boolean}
-         */
         function isScrolledIntoView(elem) {
             if (!isNoviBuilder) {
                 return elem.offset().top + elem.outerHeight() >= $window.scrollTop() && elem.offset().top <= $window.scrollTop() + $window.height();
@@ -269,11 +246,6 @@
             }
         }
 
-        /**
-         * @desc Calls a function when element has been scrolled into the view
-         * @param {object} element - jQuery object
-         * @param {function} func - callback function
-         */
         function lazyInit(element, func) {
             $document.on('scroll', function() {
                 if ((!element.hasClass('lazy-loaded') && (isScrolledIntoView(element)))) {
@@ -284,10 +256,6 @@
         }
 
 
-        /**
-         * @desc Create live search results
-         * @param {object} options
-         */
         function liveSearch(options) {
             $('#' + options.live).removeClass('cleared').html();
             options.current++;
@@ -313,10 +281,6 @@
             })
         }
 
-        /**
-         * @desc 
-         * @param {object}
-         */
         function attachFormValidator(elements) {
             regula.custom({
                 name: 'PhoneNumber',
@@ -380,12 +344,6 @@
             }
         }
 
-        /**
-         * @desc Check if all elements pass validation
-         * @param {object} elements - object of items for validation
-         * @param {object} captcha - captcha object for validation
-         * @return {boolean}
-         */
         function isValidated(elements, captcha) {
             var results, errors = 0;
 
@@ -414,11 +372,6 @@
             return true;
         }
 
-        /**
-         * @desc Validate google reCaptcha
-         * @param {object} captcha - captcha object for validation
-         * @return {boolean}
-         */
         function validateReCaptcha(captcha) {
             var captchaToken = captcha.find('.g-recaptcha-response').val();
 
@@ -453,9 +406,6 @@
             return true;
         }
 
-        /**
-         * @desc Initialize Google reCaptcha
-         */
         window.onloadCaptchaCallback = function() {
             for (var i = 0; i < plugins.captcha.length; i++) {
                 var $capthcaItem = $(plugins.captcha[i]);
@@ -474,10 +424,6 @@
             }
         };
 
-        /**
-         * @desc Initialize Bootstrap tooltip with required placement
-         * @param {string} tooltipPlacement
-         */
         function initBootstrapTooltip(tooltipPlacement) {
             plugins.bootstrapTooltip.tooltip('dispose');
 
@@ -488,11 +434,6 @@
             }
         }
 
-        /**
-         * @desc Initialize the gallery with set of images
-         * @param {object} itemsToInit - jQuery object
-         * @param {string} addClass - additional gallery class
-         */
         function initLightGallery(itemsToInit, addClass) {
             if (!isNoviBuilder) {
                 $(itemsToInit).lightGallery({
@@ -507,11 +448,6 @@
             }
         }
 
-        /**
-         * @desc Initialize the gallery with dynamic addition of images
-         * @param {object} itemsToInit - jQuery object
-         * @param {string} addClass - additional gallery class
-         */
         function initDynamicLightGallery(itemsToInit, addClass) {
             if (!isNoviBuilder) {
                 $(itemsToInit).on("click", function() {
@@ -530,11 +466,6 @@
             }
         }
 
-        /**
-         * @desc
-         * @param {object}
-         * @param {string}
-         */
         function initLightGalleryItem(itemToInit, addClass) {
             if (!isNoviBuilder) {
                 $(itemToInit).lightGallery({
